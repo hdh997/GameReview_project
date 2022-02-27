@@ -1,0 +1,96 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="GameREVIEW.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <%-- Jquery --%>
+    <script src="Jquery/jquery-3.6.0.min.js"></script>
+    <%-- bootstrap JS--%>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <%-- datatables js --%>
+    <script src="DataTables/JS/jquery.dataTables.min.js"></script>
+    
+    <%-- bootstrap css --%>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <%-- datatables css--%>
+    <link href="DataTables/CSS/jquery.dataTables.min.css" rel="stylesheet" />
+    <%-- Fontawsome css --%>
+    <link href="FontAwsome/css/all.css" rel="stylesheet" />
+    <%-- custom CSS --%>
+    <link href="Custom%20css/StyleSheet1.css" rel="stylesheet" />
+
+    
+                        
+                    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="Index.aspx">
+                    <img src="imgs/computer-game-logo-removebg.png" width="40" height="40" />
+                    GamesREVIEW
+                </a>
+
+                <%--nav toggle--%>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#MyNav" aria-controls="MyNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="MyNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="Index.aspx">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Forum</asp:LinkButton>
+                        </li>
+                    </ul>
+
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="LoginButton" runat="server" OnClick="LoginButton_Click">Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="SignUpLinkButton" runat="server" OnClick="SignUpLinkButton_Click">Sign Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="SignOutLinkButton" runat="server" Visible="False" OnClick="SignOutLinkButton_Click">Sign Out</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active">
+                            <asp:LinkButton class="nav-link" ID="UserProfileLinkButton" runat="server" Visible="False" OnClick="UserProfileLinkButton_Click">Hello user</asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 item-justify">
+                        <p>
+                            © 2007-2021 Copy Right
+                                &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="AdminLoginBtn" runat="server" OnClick="AdminLoginBtn_Click">Admin Login</asp:LinkButton>
+                            &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="MemberManageBtn" runat="server" Visible="False" OnClick="MemberManageBtn_Click">Administration</asp:LinkButton>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
